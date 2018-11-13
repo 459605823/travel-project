@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 使用VueAwesomeSwiper做轮播图
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 // 解决移动端click事件延迟执行问题
 import fastClick from 'fastclick'
 // 重置基本样子使其在不同浏览器下显示效果相同
@@ -13,6 +16,7 @@ import 'styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
+Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
 new Vue({
