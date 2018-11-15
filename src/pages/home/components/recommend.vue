@@ -17,30 +17,8 @@
 <script>
 export default {
   name: 'homeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1710/37/37da055bc2d39755a3.img.jpg_200x200_aec295f8.jpg',
-        title: '郑州方特欢乐世界',
-        desc: '高科技主题乐园，方特成就欢乐梦想'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/ce/ceacda87f56ae8e3.water.jpg_200x200_8585abf4.jpg',
-        title: '康百万庄园',
-        desc: '黄土高原封建堡垒式建筑的代表'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1705/e9/e94733a0887e957ba3.img.jpg_200x200_58d8f507.jpg',
-        title: '郑州冰雪城堡',
-        desc: '这里最近很火哦，好多人都在点评它呢！'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/e9/e9b7ae23f567806ea3.img.jpg_200x200_bf985a3d.jpg',
-        title: '少林寺',
-        desc: '小伙伴们都收藏了，去看看吧~'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>
