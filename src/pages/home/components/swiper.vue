@@ -2,6 +2,7 @@
   <!-- 外层使用一层div包裹，在图片未加载完成时，div撑开高度，防止下部内容发生抖动 -->
   <div class="wrapper">
    <swiper :options="swiperOption">
+     <!-- 一个swiper-slide就是一页,直接在swiper-slide上使用v-for就是循环输出多个swiper-slide也就是多个页面 -->
      <swiper-slide v-for="item of swiperList" :key="item.id">
        <img class="swiper-img" :src="item.imgUrl" />
      </swiper-slide>
@@ -44,7 +45,7 @@ export default {
     width:100%
     overflow:hidden
     height: 0
-    padding-bottom: 31.25%
+    padding-bottom: 26.75%
     .swiper-img
       width: 100%
 </style>
