@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 // 使用VueAwesomeSwiper做轮播图
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store/index.js'
 import 'swiper/dist/css/swiper.css'
 // 解决移动端click事件延迟执行问题
 import fastClick from 'fastclick'
@@ -22,6 +23,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
