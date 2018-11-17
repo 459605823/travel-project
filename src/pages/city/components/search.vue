@@ -1,12 +1,17 @@
 <template>
   <div class="search">
-    <input type="text" class="search-input" placeholder="输入城市名或拼音">
+    <input type="text" class="search-input" placeholder="输入城市名或拼音" @blur="handleInputBlur">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'citySearch'
+  name: 'citySearch',
+  methods: {
+    handleInputBlur (e) {
+      console.log(e.target.value)
+    }
+  }
 }
 </script>
 

@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item, key) of cities" :key="key">
+      <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">{{innerItem.name}}</div>
@@ -34,10 +34,22 @@ export default {
   name: 'cityList',
   props: {
     hotCities: Array,
-    cities: Object
+    cities: Object,
+    letter: String
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        // this.$refs[this.letter]为数组,this.$refs[this.letter][0]为对应的DOM元素
+        const element = this.$refs[this.letter][0]
+        // better-scroll原生方法滚动到某个元素
+        this.scroll.scrollToElement(element)
+        // console.log(element)
+      }
+    }
   }
 }
 </script>
