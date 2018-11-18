@@ -43,6 +43,10 @@ export default {
   activated () {
     // 监听网页的滚动事件
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // keep-alive 组件停用时调用。
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
