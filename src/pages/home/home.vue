@@ -59,6 +59,7 @@ export default {
   },
   // keep-alive组件激活时调用
   activated () {
+    // 如果城市切换，则请求新的首页信息
     if (this.lastCity !== this.city) {
       this.lastCity = this.city
       this.getHomeInfo()
