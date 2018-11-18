@@ -46,6 +46,8 @@ export default {
   },
   // keep-alive 组件停用时调用。
   deactivated () {
+    // 切换到其他页面时解绑滚动监听
+    // 防止其他页面出错
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
@@ -67,6 +69,7 @@ export default {
       color:#fff
       font-size:.4rem
   .header-fixed
+    z-index: 2
     position: fixed
     top: 0
     left: 0
