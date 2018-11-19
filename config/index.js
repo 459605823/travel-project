@@ -12,6 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
+        // 模拟请求后端服务器地址
         target: 'http://localhost:8080',
         pathRewrite: {
           '^/api': '/static/mock'

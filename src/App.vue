@@ -2,7 +2,8 @@
   <div id="app">
     <!-- keep-alive标签将渲染过的组建缓存，避免重复加载json文件 -->
    <!-- exclude除了detail组件不被缓存,这样每次选择就会请求新的数据 -->
-    <keep-alive exclude="Detail">
+    <!-- <keep-alive exclude="Detail"> -->
+    <keep-alive>
       <!-- 显示当前路由地址所对应的内容 -->
       <router-view/>
     </keep-alive>

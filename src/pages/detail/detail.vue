@@ -25,12 +25,13 @@ export default {
       sightName: '',
       bannerImg: '',
       gallaryImgs: [],
-      list: []
+      list: [],
+      lastId: ''
     }
   },
   methods: {
     getDetailInfo () {
-      axios.get('/api/detail.json?id=' + this.$route.params.id)
+      axios.get('/api/detail.json?id=' + this.lastId)
         .then(this.getDetailInfoSucc)
     },
     getDetailInfoSucc (res) {
@@ -45,7 +46,15 @@ export default {
     }
   },
   mounted () {
+    this.lastId = this.$route.params.id
     this.getDetailInfo()
+  },
+  activated () {
+    // 如果切换，则请求新的详情页信息
+    if (this.lastId !== this.$route.params.id) {
+      this.lastId = this.$route.params.id
+      this.getDetailInfo()
+    }
   }
 }
 </script>

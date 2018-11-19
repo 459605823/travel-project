@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 解决低版本浏览器不支持promise的问题
+import 'babel-polyfill'
 // 使用VueAwesomeSwiper做轮播图
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import store from './store/index.js'
